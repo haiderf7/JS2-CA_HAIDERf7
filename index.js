@@ -9,7 +9,11 @@ async function getData(url) {
   return json;
 }
 
+
 function generateHtml(data) {
+    if (!data.length) { 
+        return displayContainer.innerHTML = "No items matching search"
+      }
   const items = JSON.parse(localStorage.getItem(localStorageKey)) || [];
 
   displayContainer.innerHTML = '';
